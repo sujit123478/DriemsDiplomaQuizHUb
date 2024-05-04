@@ -1,0 +1,33 @@
+input , select{
+    height: 40px !important;
+    padding: 10px 20px !important;
+    border: 2px solid #ccc !important;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+button{
+    padding: 10px 20px; 
+    border-radius: 5px ;
+    height: 40px !important;
+}
+.primary-contend-btn{
+    height: 40px;
+    background-color: var(--primary);
+    color: white;
+    /* border: 0px !important; */
+    border: 2px solid var(--primary);
+    width: 120px ;
+}
+a{
+    color: var(--primary);
+}
+a:hover{
+     color: var(--primary);
+     text-decoration: underline;
+}
+.primary-outlined-btn{
+    background-color: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    width: 120px !important;
+}

@@ -1,0 +1,22 @@
+:root {
+    --primary: rgb(100, 98, 238);
+    --secondary: rgb(255, 255, 255);
+    --success: rgb(22, 224, 76);
+    --error: rgb(184, 0, 0);
+    --warning: rgb(220, 123, 25);
+    --danger: rgba(228, 17, 17, 0.727);
+    --light: rgb(255, 255, 255);
+    --dark: rgb(0, 0, 0);
+}
+.bg-primary{
+    background-color: var(--primary);
+}
+.correct{
+    background-color: var(--success);   
+}
+.wrong{
+    background-color: var(--danger);
+}
+.bg-white{
+    background-color: rgba(255, 255, 255, 0.267);
+}

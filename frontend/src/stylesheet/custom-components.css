@@ -1,0 +1,90 @@
+.card{
+  box-shadow: 0 0 1px rgb(31, 31, 31);
+  border-radius: 3px;
+}
+.divider{
+    border-bottom: 1px solid gray;
+}
+
+.loader-parent {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.575);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents the flames from overflowing */
+}
+
+.spinner {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: #ec5840;
+    border-radius: 100%;
+    opacity: 0.7;
+  }
+  .spinner:before {
+    content: "...";
+    text-align: center;
+    line-height: 50px;
+    font-size: 60px;
+    color: #EEEEEE;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background: rgba(0,0,0,1);
+  }
+  
+  .spinner:after {
+    content: "";
+    display: block;
+    z-index: 0;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background: linear-gradient( 420deg, transparent 50%, #CECECE 50%), linear-gradient(90deg, #CECECE 50%, transparent 50% );
+    -webkit-animation: spinner 2s infinite linear;
+    animation: spinner 2s infinite linear;
+  }
+  @-webkit-keyframes spinner {
+    from {-webkit-transform:rotate(0deg);}
+    to {-webkit-transform:rotate(360deg);}
+  }
+  @keyframes spinner {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+  }
+
+.option{
+    box-shadow: rgba(0, 0, 0, 0.689) 0px 0px 2px;
+    padding: 10px;
+    border-radius: 2px;
+}
+.selected-option{
+    box-shadow: rgb(13, 250, 40) 0px 0px 10px;
+    padding: 10px;
+    border-radius: 2px;
+}
+.result{
+    background-color: rgb(0, 119, 128);
+    padding: 30px;
+    border-radius:5px ;
+    color: white !important;
+}
+.lottie-animation{
+    height: 250px;
+
+}
+
+d-login-logo{
+    height: 50px;
+    width: 50px;
+}

@@ -1,0 +1,117 @@
+*{
+   box-sizing: border-box !important;
+   margin: 0;
+}
+.layout{ 
+    padding: 10px;
+    height: 100vh;
+}
+.sidebar{
+    height: 82vh;
+    background-color:var(--primary) ;
+    padding: 10px;
+    border-radius: 5px; 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.menu-item{
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    gap: 15px;
+}
+.body{
+    width: 100%;
+}
+.header{
+    background-color: var(--primary);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex ;
+    height: 11vh;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.active-menu-item{
+    border:2px solid white ;
+    border-radius: 2px;
+}
+.home{
+    width: 100vw;
+    margin: 20px;
+}
+.fixed-position{
+    position: fixed !important;
+}
+.card {
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+  }
+  
+  .card h1 {
+    font-size: 1.5rem;
+  }
+  
+  .card hr {
+    margin: 10px 0;
+  }
+  
+  .card h2 {
+    font-size: 1rem;
+  }
+  .reportContainer{
+   width: 100vw;
+   height: 40vh;
+  }
+  .reports{
+    height: 40vh;
+  }
+  @media screen and (max-width: 600px) {
+    .sidebar{
+        height: 77vh;
+    }
+    .header{
+        height: 13vh;
+    }
+    .homeHide{
+        display: none;
+    }
+    .Colhide{
+        display: none;
+    }
+    .primary-btn{
+        width: 31vw;
+        padding: 5px;
+        height: 37px !important;
+    }
+    .reportContainer{
+       
+        height: 40vh;
+       }
+    .questionContainer{
+        width: 90vw !important;
+        margin-top: 10px;
+    }
+ }
+ .excel-btn{
+    height: 30px !important;
+    padding: 5px;
+    background-color:var(--primary);
+    color: white;
+    border: 0px ;
+
+ }
+ .gen-btn{
+    height: 40px !important;
+    background-color: var(--primary);
+    color: white;
+    border: 0;
+ }

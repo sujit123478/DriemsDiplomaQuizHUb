@@ -1,0 +1,50 @@
+@media screen and (max-width: 600px) {
+   .register-card{
+    height: 78vh;
+    width: 80vw;
+ }
+ .login-card{
+    height: 68vh;
+    width: 80vw;
+ }
+ .forget-card{
+    width: 80vw !important;
+    height: 90vh !important;
+
+}
+.logo{
+  height: 130px;
+  width: 130px;
+}
+.sidebar{
+  width: 100vw !important;
+}
+}
+
+.c-white{
+    color: white;
+}
+input{
+    border-radius: 10px;
+}
+/* Add this CSS to your stylesheet */
+
+.otp-input-container {
+    display: flex;
+    gap: 10px;
+    
+  }
+  .otp-input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0 !important;
+  }
+  
+  /* Add any additional styling as needed */
+  
+  
