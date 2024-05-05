@@ -112,35 +112,40 @@ try {
     });
 }
 });
-router.post('/edit-question-in-exam', authMiddleware, async (req,res) =>{
+router.post('/edit-question-in-exam', authMiddleware, async (req, res) => {
     try {
-        await Question.findByIdAndUpdate(req.body.questionId, req.body);
-        res.send(
-            {
-                message:"Question updated successfully",
-                success:true
-            }
-           );
-
-    } catch (error) {
-        res.status(500).send({
-            message:error.message,
-            data:error,
-            success:false
+        const { questionId, ...updateData } = req.body; // Destructure to avoid overwriting
+        await Question.findByIdAndUpdate(questionId, { $set: updateData });
+        res.send({
+            message: "Question updated successfully",
+            success: true
         });
+    } catch (error) {
+        if (error.name === 'ValidationError') {
+            res.status(400).send({
+                message: 'Validation error: ' + error.message,
+                success: false
+            });
+        } else {
+            console.error(error); // Log the error for debugging
+            res.status(500).send({
+                message: 'An error occurred while updating the question.',
+                success: false
+            });
+        }
     }
 });
+
 router.post('/delete-question-in-exam', authMiddleware, async (req, res) => {
     try {
-        await Question.findByIdAndDelete(req.body.questionId);
-        const exam = await Exam.findById(req.body.examId);
-        exam.questions = exam.questions.filter(
-            (question) => {
-            
-                question._id != req.body.questionId
-            }
-        );
-        await exam.save()
+        const { questionId, examId } = req.body;
+
+        await Question.findByIdAndDelete(questionId); // Delete the question
+
+        await Exam.findByIdAndUpdate(examId, {
+            $pull: { questions: questionId } // Remove questionId from the exam's questions array
+        });
+
         res.send({
             message: "Question deleted successfully",
             success: true
@@ -148,7 +153,6 @@ router.post('/delete-question-in-exam', authMiddleware, async (req, res) => {
     } catch (error) {
         res.status(500).send({
             message: error.message,
-            data: error,
             success: false
         });
     }
