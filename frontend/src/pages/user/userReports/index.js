@@ -234,7 +234,7 @@ function UserReports({children}) {
             }
             }
             ></i>}
-            <h1 className='text-2xl'>Driems polytechnic Quiz app</h1>
+            <h1 className='text-2xl'>Driems polytechnic Quiz Hub</h1>
             <div className='flex flex-col'>
               <div className='flex gap-1 item-center '>
                 <i className="ri-user-line"></i>
